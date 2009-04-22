@@ -2,14 +2,23 @@
 require 'sinatra/base'
 
 module Sample
-  class Main < Sinatra::Base
+  class SampleBase < Sinatra::Base
+	# setup some options we want shared between all 'controllers'
+	set :static, true
+	set :public, File.join(File.dirname(__FILE__),'public')
+	enable :sessions
+  end
+
+  class Main < SampleBase
+	set :views, File.join(File.dirname(__FILE__),'views','main')
 	# Pretty normal application here
 	get '/' do
 	  erb :index
 	end
   end
 
-  class Blog < Sinatra::Base
+  class Blog < SampleBase
+	set :views, File.join(File.dirname(__FILE__),'views','blog')
 	# We define it this way to not require a hard / at the end of the url
 	get '' do
 	  erb :blog

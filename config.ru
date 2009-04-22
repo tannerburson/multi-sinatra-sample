@@ -1,13 +1,10 @@
 # To use with thin 
 #  thin start -p PORT -R config.ru
-
+require 'rubygems'
 require 'sinatra'
 
 # include our Application code
 require File.join(File.dirname(__FILE__), 'sample.rb')
-
-# disable sinatra's auto-application starting
-disable :run
 
 # we're in dev mode
 set :environment, :development

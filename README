@@ -2,3 +2,7 @@ Multi Class Sinatra Sample Application
 ======================================
 
 This is a simple application showing how you can mount multiple Sinatra applications into a single process.  It utilizes the builtin Rack middleware, URLMap.  I use a simple RackUp file to launch the server, though you can probably do this in a single file.
+
+thin -R config.ru start
+
+I've extended this example to show how with a shared base class between 'apps' you can easily share configuration options.  You could probably do this with a Mixin, but I haven't tested that.
