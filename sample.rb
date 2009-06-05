@@ -22,7 +22,7 @@ module Sample
   class Blog < SampleBase
     set :views, File.join(File.dirname(__FILE__),'views','blog')
     # We define it this way to not require a hard / at the end of the url
-    get '' do
+    get '/?' do
       erb :blog
     end
 
