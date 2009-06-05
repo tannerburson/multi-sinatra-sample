@@ -5,4 +5,10 @@ This is a simple application showing how you can mount multiple Sinatra applicat
 
 thin -R config.ru start
 
-I've extended this example to show how with a shared base class between 'apps' you can easily share configuration options.  You could probably do this with a Mixin, but I haven't tested that.
+or 
+
+rake start
+
+I've extended this example to show how with a shared base class between 'apps' you can easily share configuration options. 
+
+This sample now includes a sample set of RSpec tests using Sinatra's new recommended test method, Rack::Test.  I've also fixed a few issues bringing it up to compatibility with Sinatra 0.9.3
